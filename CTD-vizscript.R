@@ -34,12 +34,12 @@ genes_unique <- unique(genes)
 pheno_unique <- unique(phenotypes)
 disease_unique <- unique(diseases)
 
-chem_color <- rep((col = "blue"), nrow(chem_unique))
-gene_color <- rep((col = "darkgreen"), nrow(genes_unique))
-phenotype_color <- rep((col = "purple"), nrow(pheno_unique))
-disease_color <- rep((col = "red"), nrow(disease_unique))
+chem_colors <- colorRampPalette(c("blue4", "cyan")) (n = nrow(chem_unique))
+gene_colors <- colorRampPalette(c("darkolivegreen", "seagreen1")) (n = nrow(genes_unique))
+phenotype_colors <- colorRampPalette(c("purple4", "plum1")) (n = nrow(pheno_unique))
+disease_colors <- colorRampPalette(c("firebrick1", "firebrick4")) (n = nrow(disease_unique))
 
-node_colors <- c(chem_color, gene_color, phenotype_color, disease_color)
+node_colors <- c(chem_colors, gene_colors, phenotype_colors, disease_colors)
 
 # Generate Chord Diagram with circlize package
 circos.clear() # use this to reset all parameters
